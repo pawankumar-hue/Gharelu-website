@@ -26,10 +26,21 @@ export const authStorage = {
     localStorage.removeItem(ADMIN_USER_KEY);
   },
   getUser: () => {
-    const raw = localStorage.getItem(ADMIN_USER_KEY);
-    return raw ? JSON.parse(raw) : null;
+    try {
+      const raw = localStorage.getItem(ADMIN_USER_KEY);
+      // Guard against poisoned entries (e.g. the literal string "undefined"
+      // stored after a failed login against the wrong backend) — never crash render.
+      if (!raw || raw === 'undefined' || raw === 'null') return null;
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : null;
+    } catch {
+      localStorage.removeItem(ADMIN_USER_KEY);
+      return null;
+    }
   },
-  setUser: (u: any) => localStorage.setItem(ADMIN_USER_KEY, JSON.stringify(u)),
+  setUser: (u: any) => {
+    if (u && typeof u === 'object') localStorage.setItem(ADMIN_USER_KEY, JSON.stringify(u));
+  },
 };
 
 async function req<T>(path: string, options: RequestInit = {}): Promise<T> {
