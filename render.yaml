@@ -25,6 +25,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 22
       - key: DATA_DIR
         value: /var/gharelu-store-data
       - key: JWT_SECRET
@@ -42,6 +44,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 22
       - key: BACKEND_API_URL # Next.js rewrites proxy same-origin /api/* here (cookies stay first-party)
         fromService:
           type: web
@@ -64,6 +68,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 22
       - key: DATA_DIR
         value: /var/gharelu-admin-data
       - key: ADMIN_JWT_SECRET
@@ -81,6 +87,8 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
+      - key: NODE_VERSION
+        value: 22
       - key: VITE_ADMIN_API_URL # baked at build time; admin API allows CORS, Bearer auth
         fromService:
           type: web

@@ -15,7 +15,8 @@
     "build:frontend": "cd frontend && npm run build",
     "build:admin:backend": "cd admin/backend && npm run build",
     "build:admin:frontend": "cd admin/frontend && npm run build",
-    "build": "npm run build:backend && npm run build:frontend && npm run build:admin:backend && npm run build:admin:frontend",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend && npm install --prefix admin/backend && npm install --prefix admin/frontend",
+    "build": "npm run install:all && npm run build:backend && npm run build:frontend && npm run build:admin:backend && npm run build:admin:frontend",
     "start:backend": "cd backend && npm run start",
     "start:frontend": "cd frontend && npm run start",
     "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"magenta,cyan\" \"npm run start:backend\" \"npm run start:frontend\""
