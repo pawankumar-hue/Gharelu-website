@@ -136,88 +136,83 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--paper)] paper-grain pb-24 lg:pb-8 text-[var(--ink)]">
+    <div className="min-h-screen bg-[var(--paper)] paper-grain pb-36 lg:pb-12 text-[var(--ink)]">
       {/* ================= 1. RESPONSIVE TOP HEADER (MOBILE & TABLET ONLY: lg:hidden) ================= */}
-      <header className="lg:hidden sticky top-0 z-30 bg-[var(--paper)] paper-grain backdrop-blur-md border-b border-[var(--rule)] shadow-sm px-4 sm:px-6 pt-3.5 pb-3.5 relative">
+      <header className="lg:hidden sticky top-0 z-30 bg-[var(--paper)]/95 paper-grain backdrop-blur-md border-b border-[var(--rule)] shadow-[0_2px_12px_rgba(84,12,25,0.06)] px-3.5 sm:px-6 pt-2.5 pb-2.5 sm:pt-3.5 sm:pb-3.5 relative transition-all">
         <div className="absolute top-0 inset-x-0 h-1 bg-[#681121]" aria-hidden="true" />
-        <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
-          {/* Brand Logo & Location delivery selector */}
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 overflow-hidden rounded-2xl bg-[#681121] shadow-md border border-[#D48924]/30 shrink-0">
-                <img
-                  src="/logo.png"
-                  alt="Gharelu Hub Logo"
-                  className="w-full h-full object-cover"
-                />
+        <div className="w-full">
+          {/* Row 1: Brand Logo, Delivery & Location Selector, Loyalty Stamp */}
+          <div className="flex items-center justify-between gap-2.5">
+            {/* Brand Logo */}
+            <button
+              type="button"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex h-10 w-10 overflow-hidden rounded-2xl bg-[#681121] shadow-sm border border-[#D48924]/30 shrink-0 hover:scale-105 active:scale-95 transition-transform"
+              title="Gharelu Hub"
+            >
+              <img
+                src="/logo.png"
+                alt="Gharelu Hub Logo"
+                className="w-full h-full object-cover"
+              />
+            </button>
+
+            {/* Delivery Timing & Location Selector */}
+            <button
+              type="button"
+              onClick={() => push({ type: 'location' })}
+              className="flex-1 min-w-0 text-left px-1.5 py-0.5 rounded-xl hover:bg-[var(--paper-2)] active:scale-[0.99] transition-all group"
+            >
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="inline-flex items-center gap-1 font-note font-bold text-[11px] text-[#681121] bg-[#D48924]/15 border border-[#D48924]/40 px-2 py-0.5 rounded-full leading-none">
+                  <Zap size={11} className="fill-[#D48924] text-[#D48924]" />
+                  <span>10-15 mins</span>
+                </span>
+                <span className="font-note text-[9px] font-bold tracking-wider uppercase text-[#3d7044] bg-[#4E8B56]/15 border border-[#4E8B56]/30 px-1.5 py-0.5 rounded-full leading-none">
+                  Fresh
+                </span>
               </div>
+              <div className="flex items-center gap-1 mt-0.5">
+                <span className="font-hand italic font-bold text-base sm:text-lg text-[#540c19] tracking-tight truncate group-hover:text-[#681121] transition-colors">
+                  {branch.area}, {branch.city}
+                </span>
+                <ChevronDown size={13} className="text-[#D48924] shrink-0 group-hover:translate-y-0.5 transition-transform" />
+              </div>
+            </button>
 
-              <button
-                type="button"
-                onClick={() => push({ type: 'location' })}
-                className="flex items-center gap-2.5 text-left min-w-0"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#D48924] text-white shadow-sm">
-                  <Zap size={20} className="fill-white" />
-                </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    <span className="font-hand italic font-bold text-lg sm:text-xl text-[#540c19] tracking-tight flex items-center gap-1">
-                      Delivery in 10-15 mins
-                    </span>
-                    <span className="stamp text-[#3d7044] border-[#4E8B56]/50 text-[8px]">
-                      Fresh
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1 font-note text-[var(--ink-faint)] text-xs truncate">
-                    <span className="font-semibold text-[var(--ink-soft)]">{branch.area}</span>
-                    <span>·</span>
-                    <span className="truncate">{branch.city}</span>
-                    <ChevronDown size={14} className="text-[var(--ink-faint)] shrink-0" />
-                  </div>
-                </div>
-              </button>
-            </div>
-
-            {/* Loyalty points button on mobile — ink stamp */}
-            <div className="flex items-center gap-2 md:hidden">
+            {/* Loyalty points stamp on mobile */}
+            <div className="shrink-0">
               <button
                 type="button"
                 onClick={() => push({ type: 'loyalty' })}
-                className="stamp tilt-l-sm text-[#681121] border-[#D48924]/50"
+                className="stamp tilt-l-sm text-[#681121] border-[#D48924]/50 flex items-center gap-1 px-2.5 py-1 text-xs active:scale-95 transition-transform"
+                title="View Loyalty Points"
               >
                 <Sparkles size={12} className="text-[#D48924] fill-[#D48924]" />
-                <span>{points} pts</span>
+                <span className="font-note font-bold">{points} pts</span>
               </button>
             </div>
           </div>
 
-          {/* Search bar + Desktop Actions */}
-          <div className="flex-1 min-w-0 flex items-center gap-2 sm:gap-3">
+          {/* Row 2: Search Bar */}
+          <div className="w-full mt-2 sm:mt-2.5">
             <button
               type="button"
               onClick={() => push({ type: 'search' })}
-              className="flex-1 min-w-0 flex items-center justify-between form-blank rounded-2xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm transition-colors"
+              className="w-full flex items-center justify-between form-blank rounded-2xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-sm transition-all hover:bg-[var(--paper-2)] active:scale-[0.99] border border-[var(--rule)] shadow-sm"
             >
-              <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-                <Search size={18} className="text-[#D48924] shrink-0" />
+              <div className="flex items-center gap-2.5 min-w-0">
+                <Search size={16} className="text-[#D48924] shrink-0" />
                 <span className="font-note font-medium text-[var(--ink-faint)] truncate text-xs sm:text-sm">
                   Search &quot;Masala Makhana&quot;, &quot;Shahi Nankhatai&quot;...
                 </span>
               </div>
-              <span className="stamp text-[#3d7044] border-[#4E8B56]/40 hidden md:inline-block shrink-0 text-[8px]">
-                100% Pure Veg
+              <span className="shrink-0 flex items-center gap-1 font-note text-[10px] font-semibold text-[#3d7044] bg-[#4E8B56]/10 border border-[#4E8B56]/30 px-2 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3d7044]" />
+                <span>Pure Veg</span>
               </span>
-            </button>
-
-            {/* Desktop Loyalty Button */}
-            <button
-              type="button"
-              onClick={() => push({ type: 'loyalty' })}
-              className="hidden md:flex items-center gap-1.5 sm:gap-2 form-blank px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl font-note text-xs font-semibold text-[#681121] shrink-0 hover:bg-[var(--paper-3)] transition-colors"
-            >
-              <Sparkles size={15} className="text-[#D48924] fill-[#D48924]" />
-              <span>{points} Points</span>
             </button>
           </div>
         </div>
