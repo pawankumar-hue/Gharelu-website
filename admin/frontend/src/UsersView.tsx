@@ -42,7 +42,7 @@ export default function UsersView() {
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
         <SectionTitle
-          eyebrow="Directory · Crunch Club"
+          eyebrow="Directory · Hub Club"
           subtitle="Contact numbers, dietary veg-mode preferences and saved addresses."
         >
           Customer address book

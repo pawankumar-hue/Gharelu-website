@@ -59,7 +59,7 @@ const PAGE_META: Record<NavTab, { title: string; subtitle: string; eyebrow: stri
   users: {
     title: 'Customer Address Book',
     subtitle: 'Profiles, contact details and dietary preferences.',
-    eyebrow: 'Directory · Crunch Club',
+    eyebrow: 'Directory · Hub Club',
   },
 };
 
@@ -69,7 +69,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Sahi Crunch';
+    document.title = 'Gharelu Hub';
     const token = authStorage.getToken();
     if (token && !currentUser) {
       adminApi
@@ -112,11 +112,11 @@ export default function App() {
           <div className="px-5 pt-6 pb-5 border-b border-[var(--rule)]">
             <div className="flex items-center gap-3">
               <div className="h-11 w-11 rounded-2xl overflow-hidden shadow-md border border-[#D48924]/30 bg-[#681121] flex items-center justify-center shrink-0">
-                <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+                <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
               </div>
               <div className="leading-tight">
                 <span className="font-hand italic font-bold text-xl text-[#540c19] block leading-tight">
-                  Sahi Crunch
+                  Gharelu Hub
                 </span>
                 <span className="font-note text-[9px] font-semibold tracking-[0.2em] uppercase text-[#b87319] block">
                   Admin Kitchen Log
@@ -259,11 +259,11 @@ export default function App() {
           <div className="flex items-center justify-between px-4 py-3">
             <div className="flex items-center gap-2.5">
               <div className="h-9 w-9 rounded-xl overflow-hidden shadow-sm border border-[#D48924]/30 bg-[#681121] flex items-center justify-center shrink-0">
-                <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+                <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
               </div>
               <div className="leading-tight">
                 <span className="font-hand italic font-bold text-lg text-[#540c19] block leading-tight">
-                  Sahi Crunch
+                  Gharelu Hub
                 </span>
                 <span className="font-note text-[9px] font-semibold tracking-[0.2em] uppercase text-[#b87319] block">
                   Admin Kitchen Log

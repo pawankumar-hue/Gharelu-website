@@ -147,7 +147,7 @@ export default function Home() {
               <div className="flex h-10 w-10 overflow-hidden rounded-2xl bg-[#681121] shadow-md border border-[#D48924]/30 shrink-0">
                 <img
                   src="/logo.png"
-                  alt="Sahi Crunch Logo"
+                  alt="Gharelu Hub Logo"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -231,7 +231,7 @@ export default function Home() {
               {/* Left: handwritten pitch */}
               <div className="lg:col-span-7 flex flex-col">
                 <h2 className="font-hand italic text-4xl sm:text-5xl lg:text-[58px] text-[#540c19] tracking-tight leading-[1.02]">
-                  Sahi spice,
+                  Gharelu spice,
                   <br />
                   <span className="marker">100% roasted, never fried.</span>
                 </h2>
@@ -259,7 +259,7 @@ export default function Home() {
                     type="button"
                     onClick={() => {
                       const heroDish = pool.find((d) => d.id === 'mk-bhopali-masala') || pool[0];
-                      if (heroDish) push({ type: 'dish', dish: heroDish });
+                      if (heroDish) push({ type: 'dish', id: heroDish.id });
                     }}
                     className="font-note text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-xl flex items-center gap-2 bg-[#D48924]/15 text-[#915408] border-2 border-dashed border-[#D48924]/60 hover:bg-[#D48924]/25 transition-colors"
                   >
@@ -269,7 +269,7 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={async () => {
-                      const msg = 'Hi Sahi Crunch! I want to order the ₹129 Hero Pack.';
+                      const msg = 'Hi Gharelu Hub! I want to order the ₹129 Hero Pack.';
                       const { data } = await proxyApi.sendWhatsApp({ message: msg });
                       if (data?.url) window.open(data.url, '_blank');
                       else window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
@@ -599,7 +599,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= 6. WHY BHOPAL CHOOSES SAHI CRUNCH (CASE-STUDY BACKED) ================= */}
+        {/* ================= 6. WHY BHOPAL CHOOSES GHARELU HUB (CASE-STUDY BACKED) ================= */}
         <section className="relative rounded-3xl overflow-hidden bg-[#f5edda] border border-[#e0d2b6] shadow-[0_24px_50px_-30px_rgba(84,12,25,0.45)]">
           {/* Kitchen-log paper: fibre grain, ruled top edge */}
           <div className="absolute inset-0 bg-[radial-gradient(rgba(122,92,48,0.09)_1px,transparent_1px)] [background-size:19px_19px] pointer-events-none" />
@@ -857,10 +857,10 @@ export default function Home() {
             <div className="lg:col-span-2 space-y-3.5">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl overflow-hidden bg-[#681121] border border-[#D48924]/40 flex items-center justify-center shadow-md">
-                  <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+                  <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="font-hand italic text-2xl tracking-tight text-[#FDFBF7] leading-tight">Sahi Crunch</h3>
+                  <h3 className="font-hand italic text-2xl tracking-tight text-[#FDFBF7] leading-tight">Gharelu Hub</h3>
 
                 </div>
               </div>
@@ -883,7 +883,7 @@ export default function Home() {
                 <li><button type="button" onClick={() => setTab('menu')} className="hover:text-[#E2952A] transition-colors">Royal Shahi Nankhatai</button></li>
                 <li><button type="button" onClick={() => setTab('menu')} className="hover:text-[#E2952A] transition-colors">Ratlam Laung Sev</button></li>
                 <li><button type="button" onClick={() => setTab('menu')} className="hover:text-[#E2952A] transition-colors">Roasted Chana &amp; Makhana</button></li>
-                <li><button type="button" onClick={() => setTab('menu')} className="hover:text-[#E2952A] transition-colors">Festive Sahi Gift Hampers</button></li>
+                <li><button type="button" onClick={() => setTab('menu')} className="hover:text-[#E2952A] transition-colors">Festive Gharelu Gift Hampers</button></li>
               </ul>
             </div>
 
@@ -907,7 +907,7 @@ export default function Home() {
               </p>
               <button
                 type="button"
-                onClick={() => window.open('https://wa.me/919999999999?text=Hi%20Sahi%20Crunch,%20I%20have%20an%20inquiry', '_blank')}
+                onClick={() => window.open('https://wa.me/919999999999?text=Hi%20Gharelu%20Hub,%20I%20have%20an%20inquiry', '_blank')}
                 className="w-full inline-flex items-center justify-center gap-2 font-note text-xs font-semibold px-3 py-2.5 rounded-xl bg-[#25D366]/15 text-[#25D366] border-2 border-dashed border-[#25D366]/50 hover:bg-[#25D366]/25 transition-colors"
               >
                 <span>Chat on WhatsApp</span>
@@ -917,7 +917,7 @@ export default function Home() {
 
           {/* Bottom Copyright & Disclaimer — a hand-written colophon */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-note text-[11px] text-[#FDFBF7]/55 font-medium">
-            <p className="font-hand italic text-base text-[#FDFBF7]/80">© 2026 Sahi Crunch · Bhopal&apos;s 78-year snackery. All rights reserved.</p>
+            <p className="font-hand italic text-base text-[#FDFBF7]/80">© 2026 Gharelu Hub · Bhopal&apos;s 78-year snackery. All rights reserved.</p>
 
           </div>
         </footer>

@@ -36,7 +36,7 @@ export default function Loyalty() {
   };
 
   return (
-    <Screen eyebrow="Rewards Program" title="Crunch Club Points">
+    <Screen eyebrow="Rewards Program" title="Hub Club Points">
       <div className="w-full px-4 sm:px-6 lg:px-10 py-4 space-y-5 max-w-5xl mx-auto pb-32">
         {/* Points Balance — the maroon club ledger sign */}
         <div className="relative rounded-2xl bg-[#540c19] text-[#FDFBF7] border border-[#D48924]/40 p-5 shadow-[3px_4px_0_rgba(36,4,9,0.35),0_16px_30px_-22px_rgba(84,12,25,0.6)] overflow-hidden">
@@ -51,13 +51,13 @@ export default function Loyalty() {
 
             <div className="flex items-baseline gap-2 mt-3">
               <span className="font-hand text-5xl leading-none">{points}</span>
-              <span className="font-hand italic text-lg text-[#E2952A]">Crunch Points</span>
+              <span className="font-hand italic text-lg text-[#E2952A]">Hub Points</span>
             </div>
             <svg viewBox="0 0 200 10" className="w-40 h-2.5 mt-1.5" fill="none" aria-hidden="true">
               <path d="M3 7c22-4 44-5.5 66-4s42 3.5 64 2.5 42-4 64-5" stroke="#E2952A" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <p className="font-note text-xs text-[#FDFBF7]/75 mt-1.5 leading-relaxed">
-              Earn 1 point on every ₹10 spent on Sahi Crunch small batches.
+              Earn 1 point on every ₹10 spent on Gharelu Hub small batches.
             </p>
 
             {/* Progress — ink filling up towards the next stamp in the book */}

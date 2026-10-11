@@ -6,11 +6,11 @@ import { ToastProvider } from '../src/lib/ToastContext';
 import AuthModal from '../src/screens/AuthModal';
 
 export const metadata: Metadata = {
-  title: 'Sahi Crunch',
-  description: 'Preservative-free makhana, namkeen, and fresh-baked nankhatai. Small-batch, WhatsApp-first, delivered fresh from our Bhopal kitchen within 48 hours. Sahi Spice. Modern Crunch.',
-  keywords: ['makhana', 'Bhopal snacks', 'preservative-free', 'namkeen', 'nankhatai', 'healthy snacks', 'Sahi Crunch'],
+  title: 'Gharelu Hub',
+  description: 'Preservative-free makhana, namkeen, and fresh-baked nankhatai. Small-batch, WhatsApp-first, delivered fresh from our Bhopal kitchen within 48 hours. Gharelu taste. Modern crunch.',
+  keywords: ['makhana', 'Bhopal snacks', 'preservative-free', 'namkeen', 'nankhatai', 'healthy snacks', 'Gharelu Hub'],
   openGraph: {
-    title: 'Sahi Crunch',
+    title: 'Gharelu Hub',
     description: 'Bhopal\'s small-batch, preservative-free snack brand. Fresh within 48 hours. Order on WhatsApp.',
     type: 'website',
   },

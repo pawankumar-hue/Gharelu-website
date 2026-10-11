@@ -69,7 +69,7 @@ export default function CartSheet() {
         return `• ${l.qty}x ${d?.name || 'Item'} (${formatINR(lineTotal(l))})`;
       })
       .join('\n');
-    const msg = `Hi Sahi Crunch! I would like to place an order:\n\n${linesText}\n\nSubtotal: ${formatINR(subtotal)}\nPlease confirm delivery in Bhopal!`;
+    const msg = `Hi Gharelu Hub! I would like to place an order:\n\n${linesText}\n\nSubtotal: ${formatINR(subtotal)}\nPlease confirm delivery in Bhopal!`;
     const { data } = await proxyApi.sendWhatsApp({ message: msg });
     if (data?.url) {
       window.open(data.url, '_blank');

@@ -108,7 +108,7 @@ export default function TrackOrder({ orderId }: { orderId: string }) {
                   your batch rides with
                 </p>
                 <p className="font-note text-xs font-semibold text-[var(--ink)] mt-1">
-                  Ramesh (Sahi Express)
+                  Ramesh (Gharelu Express)
                 </p>
                 <p className="font-note text-[11px] text-[var(--ink-faint)]">
                   Assigned Delivery Partner · Bhopal Hub
@@ -166,7 +166,7 @@ export default function TrackOrder({ orderId }: { orderId: string }) {
         <button
           type="button"
           onClick={async () => {
-            const msg = `Hi Sahi Crunch, need help with Order ${order.code}`;
+            const msg = `Hi Gharelu Hub, need help with Order ${order.code}`;
             const { data } = await proxyApi.sendWhatsApp({ message: msg });
             if (data?.url) window.open(data.url, '_blank');
             else window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');

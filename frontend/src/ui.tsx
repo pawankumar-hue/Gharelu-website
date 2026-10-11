@@ -214,7 +214,7 @@ export function Sheet({
 export function DishImg({
   name,
   className = '',
-  alt = 'Sahi Crunch Snack',
+  alt = 'Gharelu Hub Snack',
 }: {
   name: string;
   className?: string;

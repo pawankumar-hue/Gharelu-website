@@ -90,7 +90,7 @@ export default function TopNavbar() {
               className="w-9 h-9 rounded-full overflow-hidden bg-[#681121] flex items-center justify-center shrink-0 mr-1 shadow-md hover:scale-105 transition-transform border border-[#D48924]/30"
               title="Home"
             >
-              <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+              <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
             </button>
 
             {/* Navigation Links — hand-lettered tabs */}
@@ -181,16 +181,16 @@ export default function TopNavbar() {
                 <div className="h-10 w-10 xl:h-11 xl:w-11 rounded-2xl overflow-hidden shadow-md group-hover:scale-105 transition-transform border border-[#D48924]/30 bg-[#681121] flex items-center justify-center shrink-0">
                   <img
                     src="/logo.png"
-                    alt="Sahi Crunch Logo"
+                    alt="Gharelu Hub Logo"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <span className="font-hand italic font-bold text-xl xl:text-2xl tracking-tight text-[#540c19] block leading-tight group-hover:text-[#681121] transition-colors">
-                    Sahi Crunch
+                    Gharelu Hub
                   </span>
                   <span className="font-note text-[9px] xl:text-[10px] font-semibold tracking-[0.2em] uppercase text-[#b87319] block">
-                    Sahi Baked Heritage
+                    Gharelu Baked Heritage
                   </span>
                 </div>
               </button>
@@ -311,7 +311,7 @@ export default function TopNavbar() {
                 href="http://localhost:3001"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Open Sahi Crunch Admin Control Panel"
+                title="Open Gharelu Hub Admin Control Panel"
                 className="hidden lg:flex items-center gap-1 text-[11px] font-note font-semibold text-[#681121] bg-[#D48924]/15 hover:bg-[#D48924]/25 border border-[#D48924]/40 px-2.5 py-1.5 rounded-xl transition-all"
               >
                 <span>Admin</span>

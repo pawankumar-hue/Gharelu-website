@@ -167,7 +167,7 @@ function ProductModal({ product, categories, isOpen, onClose, onSave }: ProductM
                   {isEditing ? 'Editing recipe card' : 'New recipe card'}
                 </p>
                 <h2 className="font-hand italic text-xl text-[#540c19] truncate leading-tight">
-                  {isEditing ? product?.name : 'Create a new Sahi snack'}
+                  {isEditing ? product?.name : 'Create a new Gharelu snack'}
                 </h2>
               </div>
             </div>
@@ -910,7 +910,7 @@ export default function ProductsView() {
                       />
                     </div>
                     <p className="font-hand italic text-sm text-[var(--ink-soft)] text-center mt-2 leading-none">
-                      {item.weight || 'Sahi Crunch batch'}
+                      {item.weight || 'Gharelu Hub batch'}
                     </p>
                   </div>
 

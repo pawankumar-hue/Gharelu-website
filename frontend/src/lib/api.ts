@@ -1,5 +1,5 @@
 /**
- * api.ts — Typed API client for Sahi Crunch
+ * api.ts — Typed API client for Gharelu Hub
  * All frontend → backend communication goes through here.
  */
 

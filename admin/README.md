@@ -1,6 +1,6 @@
-# Sahi Crunch — Operations & Admin Control Panel
+# Gharelu Hub — Operations & Admin Control Panel
 
-This document outlines the architecture, setup instructions, and feature guide for the **Sahi Crunch Admin Control Panel**.
+This document outlines the architecture, setup instructions, and feature guide for the **Gharelu Hub Admin Control Panel**.
 
 ---
 
@@ -32,7 +32,7 @@ d:/sahi crunch/
 │       └── package.json
 ├── backend/                   # Customer Store API Server (Port 5000)
 │   └── data/
-│       └── sahi-crunch-db.json# Single source of truth database
+│       └── gharelu-hub-db.json# Single source of truth database
 └── frontend/                  # Next.js Customer Web App (Port 3000)
 ```
 
@@ -41,7 +41,7 @@ d:/sahi crunch/
 ## 🔐 Admin Authentication Credentials
 
 - **Admin URL:** `http://localhost:3001`
-- **Default Email:** `admin@sahicrunch.in`
+- **Default Email:** `admin@ghareluhub.in`
 - **Default Master Key / Password:** `admin123`
 
 ---

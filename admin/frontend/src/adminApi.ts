@@ -1,7 +1,7 @@
 import type { Dish, Order, Reservation, User, DashboardMetrics, MenuCategory } from './types';
 
-const TOKEN_KEY = 'sahi_crunch_admin_token';
-const ADMIN_USER_KEY = 'sahi_crunch_admin_user';
+const TOKEN_KEY = 'gharelu_hub_admin_token';
+const ADMIN_USER_KEY = 'gharelu_hub_admin_user';
 
 export const ORDER_STAGES = [
   { label: 'Order Received', desc: 'Sent to master kitchen', color: 'text-[#681121] border-[#681121]/45' },

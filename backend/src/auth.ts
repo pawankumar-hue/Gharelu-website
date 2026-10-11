@@ -7,7 +7,7 @@ import bcrypt from 'bcryptjs';
 import type { Request, Response, NextFunction } from 'express';
 import { findUserById, type DBUser } from './db.js';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'sahi-crunch-super-secret-jwt-key-2024-bhopal';
+const JWT_SECRET = process.env.JWT_SECRET || 'gharelu-hub-super-secret-jwt-key-2024-bhopal';
 const COOKIE_NAME = 'sc_auth';
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 

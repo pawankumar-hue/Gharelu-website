@@ -1,5 +1,5 @@
 /**
- * AuthModal.tsx — Login & Register Modal for Sahi Crunch
+ * AuthModal.tsx — Login & Register Modal for Gharelu Hub
  * A sign-in slip pinned to the kitchen board — tabs switch between Login and Register.
  */
 
@@ -92,10 +92,10 @@ export default function AuthModal() {
 
           <div className="flex items-center gap-2.5 mb-2">
             <div className="h-9 w-9 rounded-xl overflow-hidden border border-[var(--rule)] bg-[var(--paper-3)] flex items-center justify-center shrink-0">
-              <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+              <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
             </div>
             <div>
-              <div className="font-note text-[10px] font-semibold tracking-[0.18em] text-[#b87319] uppercase">Sahi Crunch</div>
+              <div className="font-note text-[10px] font-semibold tracking-[0.18em] text-[#b87319] uppercase">Gharelu Hub</div>
               <div className="font-hand italic text-xs text-[var(--ink-soft)]">Bhopal's Snack Hub</div>
             </div>
           </div>

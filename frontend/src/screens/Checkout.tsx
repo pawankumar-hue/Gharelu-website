@@ -61,10 +61,10 @@ export default function Checkout() {
 
   const discount = useMemo(() => {
     if (!offer) return 0;
-    if (offer.code === 'SAHIFIRST') return Math.round((subtotal * 10) / 100);
-    if (offer.code === 'SAHIREF') return 50;
-    if (offer.code === 'BULKCRUNCH') return subtotal >= 999 ? Math.round((subtotal * 15) / 100) : 0;
-    if (offer.code === 'SAHI25') return 250;
+    if (offer.code === 'GHFIRST' || offer.code === 'SAHIFIRST') return Math.round((subtotal * 10) / 100);
+    if (offer.code === 'GHREF' || offer.code === 'SAHIREF') return 50;
+    if (offer.code === 'GHBULK15' || offer.code === 'BULKCRUNCH') return subtotal >= 999 ? Math.round((subtotal * 15) / 100) : 0;
+    if (offer.code === 'GH250' || offer.code === 'SAHI25') return 250;
     if (offer.code === 'INSIDER') return Math.round((subtotal * 20) / 100);
     return Math.round((subtotal * 10) / 100);
   }, [offer, subtotal]);

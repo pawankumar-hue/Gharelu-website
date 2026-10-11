@@ -19,12 +19,14 @@ next-env.d.ts
 !.env.example
 !*/.env.example
 
-# Local data & logs
-data/
-*/data/
+# Local data & logs (runtime JSON DB only — scoped so src/data/ sources stay tracked)
+backend/data/
 *.local
 *.log
 npm-debug.log*
+
+# Auto-generated Next.js agent rules (recreated by `next dev`)
+frontend/AGENTS.md
 
 # System files
 .DS_Store

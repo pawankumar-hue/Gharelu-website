@@ -156,7 +156,7 @@ export default function App() {
   }, [setTab, push]);
 
   useEffect(() => {
-    document.title = 'Sahi Crunch';
+    document.title = 'Gharelu Hub';
     const on = () => setOnline(true);
     const off = () => setOnline(false);
     window.addEventListener('online', on);

@@ -140,7 +140,7 @@ export default function Orders() {
                   Keep this pad with you
                 </h3>
                 <p className="font-note text-xs text-[var(--ink-faint)] mt-0.5">
-                  Sign in and your old tickets, live courier status and Crunch Club points follow you to any device.
+                  Sign in and your old tickets, live courier status and Hub Club points follow you to any device.
                 </p>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function Orders() {
                         </span>
                         <span className="font-note text-[11px] font-semibold text-[#b87319] flex items-center gap-1">
                           <Sparkles size={11} className="fill-[#D48924]" />
-                          +{o.pointsEarned || Math.round(o.total / 10)} Crunch Pts
+                          +{o.pointsEarned || Math.round(o.total / 10)} Hub Pts
                         </span>
                       </div>
                     </div>

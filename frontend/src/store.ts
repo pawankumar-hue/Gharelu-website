@@ -297,7 +297,7 @@ export const useApp = create<AppState>()(
         }),
     }),
     {
-      name: 'sahi-crunch-app',
+      name: 'gharelu-hub-app',
       partialize: (s) => ({
         onboarded: s.onboarded,
         locationId: s.locationId,

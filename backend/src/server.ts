@@ -1,5 +1,5 @@
 /**
- * server.ts — Express Backend Server for Sahi Crunch
+ * server.ts — Express Backend Server for Gharelu Hub
  * Runs on Port 5000 (proxied via Frontend on Port 3000)
  */
 
@@ -50,7 +50,7 @@ app.use(express.json());
 app.get('/api/health', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'Sahi Crunch Backend API',
+    service: 'Gharelu Hub Backend API',
     version: '1.0.0',
     timestamp: new Date().toISOString(),
   });
@@ -70,7 +70,7 @@ app.post('/api/proxy/whatsapp', (req: Request, res: Response) => {
   // In production, backend communicates with WhatsApp Business Cloud API using secretKey
   // For client redirect/handoff, return approved sanitized URL without revealing raw credentials
   const targetPhone = phone || '91XXXXXXXXXX';
-  const encodedMsg = encodeURIComponent(message || 'Hi Sahi Crunch! I want to order.');
+  const encodedMsg = encodeURIComponent(message || 'Hi Gharelu Hub! I want to order.');
   const waUrl = `https://wa.me/${targetPhone}?text=${encodedMsg}`;
 
   res.json({
@@ -289,9 +289,9 @@ app.patch('/api/orders/:id', requireAuthMiddleware, (req: AuthedRequest, res: Re
 
 const TIERS = [
   { name: 'Makhana Rookie', minPoints: 0, discount: 0, color: '#9ca3af' },
-  { name: 'Crunch Insider', minPoints: 500, discount: 5, color: '#D48924' },
+  { name: 'Hub Insider', minPoints: 500, discount: 5, color: '#D48924' },
   { name: 'Bhopal Legend', minPoints: 2000, discount: 10, color: '#681121' },
-  { name: 'Sahi VIP', minPoints: 5000, discount: 15, color: '#1a0a0e' },
+  { name: 'Gharelu VIP', minPoints: 5000, discount: 15, color: '#1a0a0e' },
 ];
 
 function tierOf(points: number): number {
@@ -359,5 +359,5 @@ app.post('/api/favorites', requireAuthMiddleware, (req: AuthedRequest, res: Resp
 /* ─────────────── Start Server ─────────────── */
 
 app.listen(Number(PORT), '0.0.0.0', () => {
-  console.log(`[Sahi Crunch Backend] Server running on http://127.0.0.1:${PORT}`);
+  console.log(`[Gharelu Hub Backend] Server running on http://127.0.0.1:${PORT}`);
 });

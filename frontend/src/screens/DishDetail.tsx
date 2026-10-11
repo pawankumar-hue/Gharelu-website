@@ -99,7 +99,7 @@ export default function DishDetail({ id }: { id: string }) {
             <button
               type="button"
               onClick={() => {
-                const shareText = `${dish.name} — Sahi Crunch Bhopal`;
+                const shareText = `${dish.name} — Gharelu Hub Bhopal`;
                 if (navigator.clipboard) {
                   navigator.clipboard.writeText(shareText);
                   showSuccess(`Copied "${dish.name}" to clipboard!`, 'Share Treat');

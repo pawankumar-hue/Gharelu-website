@@ -45,7 +45,7 @@ export default function Splash() {
             <div className="h-24 w-24 overflow-hidden bg-[var(--paper-3)]">
               <img
                 src="/logo.png"
-                alt="Sahi Crunch Logo"
+                alt="Gharelu Hub Logo"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -58,13 +58,13 @@ export default function Splash() {
         </div>
 
         <h1 className="font-hand italic text-4xl tracking-tight text-[#540c19]">
-          SAHI CRUNCH
+          GHARELU HUB
         </h1>
         <svg viewBox="0 0 200 10" className="w-40 h-2.5 mt-1.5" fill="none" aria-hidden="true">
           <path d="M2 7c24-4 46-5 70-3.6s44 3.6 68 2.4 38-4 58-5" stroke="#D48924" strokeWidth="2.4" strokeLinecap="round" />
         </svg>
         <p className="mt-2 font-hand italic text-lg text-[#b87319] tracking-wide">
-          <span className="marker">Sahi Spice. Modern Crunch.</span>
+          <span className="marker">Gharelu Taste. Modern Crunch.</span>
         </p>
         <p className="mt-1.5 font-note text-xs text-[var(--ink-soft)] max-w-xs leading-relaxed">
           Small-batch preservative-free makhana, namkeen &amp; fresh bakery

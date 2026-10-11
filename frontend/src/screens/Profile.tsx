@@ -68,7 +68,7 @@ export default function Profile() {
   };
 
   const handleShareApp = () => {
-    const shareUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sahicrunch.in';
+    const shareUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ghareluhub.in';
     if (navigator?.clipboard) {
       navigator.clipboard.writeText(shareUrl);
       setCopiedShare(true);
@@ -79,10 +79,10 @@ export default function Profile() {
     }
   };
 
-  const displayName = auth.user?.name || (auth.isLoggedIn ? 'Sahi Foodie' : 'Guest Foodie');
+  const displayName = auth.user?.name || (auth.isLoggedIn ? 'Gharelu Foodie' : 'Guest Foodie');
   const displayPhone = auth.user?.phone || '';
   const displayEmail = auth.user?.email || '';
-  const initial = displayName[0]?.toUpperCase() ?? 'S';
+  const initial = displayName[0]?.toUpperCase() ?? 'G';
 
   // Tier progress estimation
   const tierMin = tier.from;
@@ -239,7 +239,7 @@ export default function Profile() {
               </div>
               <div className="flex-1 sm:flex-initial bg-[var(--paper-3)]/60 border-2 border-dashed border-[var(--rule)] rounded-xl px-4 py-2 text-center tilt-r-sm">
                 <span className="block font-note text-[9px] font-semibold uppercase tracking-[0.16em] text-[#b87319]">
-                  Crunch Pts
+                  Hub Pts
                 </span>
                 <span className="font-hand italic text-base text-[#681121]">{points}</span>
               </div>
@@ -299,7 +299,7 @@ export default function Profile() {
 
               <div>
                 <p className="font-note text-[10px] uppercase tracking-[0.18em] text-[var(--ink-soft)] font-semibold">
-                  Available Crunch Balance
+                  Available Hub Balance
                 </p>
                 <div className="flex items-baseline gap-2.5 mt-0.5">
                   <span className="font-hand italic font-bold text-4xl sm:text-5xl tracking-tight text-[#540c19]">
@@ -495,7 +495,7 @@ export default function Profile() {
             <button
               type="button"
               onClick={async () => {
-                const msg = `Hi Sahi Crunch Concierge, I need assistance with my account/order.`;
+                const msg = `Hi Gharelu Hub Concierge, I need assistance with my account/order.`;
                 const { data } = await proxyApi.sendWhatsApp({ message: msg });
                 if (data?.url) window.open(data.url, '_blank');
                 else window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
@@ -516,7 +516,7 @@ export default function Profile() {
               onClick={() => {
                 confirm({
                   title: 'Sign Out Confirmation',
-                  message: 'Are you sure you want to sign out of your Sahi Crunch account on this device?',
+                  message: 'Are you sure you want to sign out of your Gharelu Hub account on this device?',
                   confirmLabel: 'Yes, Sign Out',
                   cancelLabel: 'Keep Logged In',
                   variant: 'danger',
@@ -529,7 +529,7 @@ export default function Profile() {
               className="w-full flex items-center justify-center gap-2 p-3.5 rounded-2xl border-2 border-dashed border-[#a32230]/45 text-[#a32230] bg-[#a32230]/5 hover:bg-[#a32230]/10 font-note text-xs font-semibold uppercase tracking-[0.14em] transition-colors"
             >
               <LogOut size={16} />
-              <span>Sign Out of Sahi Crunch</span>
+              <span>Sign Out of Gharelu Hub</span>
             </button>
           ) : (
             <button
@@ -546,7 +546,7 @@ export default function Profile() {
         {/* Footer Brand Info */}
         <div className="text-center pt-3 pb-6 space-y-1">
           <p className="font-note text-[11px] text-[var(--ink-faint)] font-semibold uppercase tracking-[0.18em]">
-            Sahi Crunch kitchen log · Bhopal, MP
+            Gharelu Hub kitchen log · Bhopal, MP
           </p>
           <p className="font-hand italic text-xs text-[var(--ink-faint)]">
             Made in small batches, packed by hand · App v2.4.0

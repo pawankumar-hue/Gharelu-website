@@ -64,7 +64,7 @@ export default function ReserveFlow() {
           </div>
 
           <span className="stamp tilt-r-sm mt-5 text-[#b87319] border-[#D48924]/60">
-            +50 CRUNCH POINTS ADDED
+            +50 HUB POINTS ADDED
           </span>
 
           <button

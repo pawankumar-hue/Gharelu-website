@@ -1,5 +1,5 @@
 /**
- * AuthContext.tsx — Global authentication state for Sahi Crunch
+ * AuthContext.tsx — Global authentication state for Gharelu Hub
  * Wraps the app and provides auth state + actions to all components.
  */
 

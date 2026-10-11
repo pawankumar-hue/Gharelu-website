@@ -1,5 +1,5 @@
 /**
- * server.ts — Dedicated Admin Backend for Sahi Crunch Control Panel
+ * server.ts — Dedicated Admin Backend for Gharelu Hub Control Panel
  * Runs on Port 5001
  * Provides full control over:
  * - Products/Dishes (Create, Read, Update, Delete, Toggle Availability, Update Image/Price/Tags)
@@ -51,8 +51,8 @@ const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
-const JWT_SECRET = process.env.ADMIN_JWT_SECRET || 'sahi_crunch_admin_super_secret_jwt_key_2026';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@sahicrunch.in';
+const JWT_SECRET = process.env.ADMIN_JWT_SECRET || 'gharelu_hub_admin_super_secret_jwt_key_2026';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@ghareluhub.in';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 
 // Setup uploads folder inside frontend public/images/products and frontend public/images
@@ -106,7 +106,7 @@ function requireAdminAuth(req: AdminAuthedRequest, res: Response, next: NextFunc
 app.get('/api/admin/health', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'Sahi Crunch Admin Control Panel Backend',
+    service: 'Gharelu Hub Admin Control Panel Backend',
     version: '1.0.0',
     port: PORT,
     timestamp: new Date().toISOString(),
@@ -128,7 +128,7 @@ app.post('/api/admin/login', (req: Request, res: Response) => {
       token,
       admin: {
         email,
-        name: 'Sahi Crunch Super Admin',
+        name: 'Gharelu Hub Super Admin',
         role: 'admin',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
       },
@@ -143,7 +143,7 @@ app.get('/api/admin/me', requireAdminAuth, (req: AdminAuthedRequest, res: Respon
     ok: true,
     admin: {
       email: req.admin?.email,
-      name: 'Sahi Crunch Super Admin',
+      name: 'Gharelu Hub Super Admin',
       role: 'admin',
     },
   });
@@ -468,5 +468,5 @@ app.delete('/api/admin/categories/:id', requireAdminAuth, (req: AdminAuthedReque
 /* ─────────────── Start Admin Server ─────────────── */
 
 app.listen(Number(PORT), '0.0.0.0', () => {
-  console.log(`[Sahi Crunch Admin Backend] 👑 Control Panel Server listening on http://127.0.0.1:${PORT}`);
+  console.log(`[Gharelu Hub Admin Backend] 👑 Control Panel Server listening on http://127.0.0.1:${PORT}`);
 });

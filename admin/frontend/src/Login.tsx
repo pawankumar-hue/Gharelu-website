@@ -4,7 +4,7 @@ import { adminApi, authStorage } from './adminApi';
 import { Squiggle } from './ui';
 
 export default function Login({ onLogin }: { onLogin: (user: any) => void }) {
-  const [email, setEmail] = useState('admin@sahicrunch.in');
+  const [email, setEmail] = useState('admin@ghareluhub.in');
   const [password, setPassword] = useState('admin123');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -39,14 +39,14 @@ export default function Login({ onLogin }: { onLogin: (user: any) => void }) {
             {/* Brand lockup — identical to the customer panel */}
             <div className="flex flex-col items-center text-center">
               <div className="h-16 w-16 rounded-2xl overflow-hidden shadow-md border border-[#D48924]/30 bg-[#681121] flex items-center justify-center mb-3">
-                <img src="/logo.png" alt="Sahi Crunch" className="w-full h-full object-cover" />
+                <img src="/logo.png" alt="Gharelu Hub" className="w-full h-full object-cover" />
               </div>
 
               <p className="font-note text-[10px] font-semibold uppercase tracking-[0.24em] text-[#b87319]">
-                Sahi Baked Heritage
+                Gharelu Baked Heritage
               </p>
               <h1 className="font-hand italic font-bold text-3xl text-[#540c19] leading-tight mt-0.5">
-                Sahi Crunch
+                Gharelu Hub
               </h1>
               <Squiggle />
               <p className="font-note text-[11px] text-[var(--ink-faint)] mt-1 font-medium">
@@ -71,7 +71,7 @@ export default function Login({ onLogin }: { onLogin: (user: any) => void }) {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin@sahicrunch.in"
+                    placeholder="admin@ghareluhub.in"
                     className="form-blank w-full pl-9 pr-3 py-2.5 font-note text-sm text-[var(--ink)] outline-none focus:border-[#681121]"
                   />
                 </div>
@@ -110,14 +110,14 @@ export default function Login({ onLogin }: { onLogin: (user: any) => void }) {
 
             <div className="mt-6 pt-4 border-t border-dashed border-[var(--rule)] flex justify-center">
               <span className="stamp tilt-r-sm text-[#3d7044] border-[#4E8B56]/50 text-center">
-                Key · admin@sahicrunch.in / admin123
+                Key · admin@ghareluhub.in / admin123
               </span>
             </div>
           </div>
         </div>
 
         <p className="text-center font-note text-[11px] text-[var(--ink-faint)] mt-5">
-          © {new Date().getFullYear()} Sahi Crunch · Bhopal artisanal snacks
+          © {new Date().getFullYear()} Gharelu Hub · Bhopal artisanal snacks
         </p>
       </div>
     </div>

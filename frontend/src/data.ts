@@ -141,13 +141,13 @@ export const customizationsFor = (d: Dish): OptionGroup[] => customizationMap[d.
 /* ---------------- order tracking ---------------- */
 
 export const ORDER_STAGES = [
-  { id: 'placed', label: 'ORDER PLACED', sub: 'We have your Sahi Crunch order' },
+  { id: 'placed', label: 'ORDER PLACED', sub: 'We have your Gharelu Hub order' },
   { id: 'sourced', label: 'FRESH BATCH CONFIRMED', sub: 'Farm-fresh batch allocated to your order' },
   { id: 'roasting', label: 'ROASTING IN PROGRESS', sub: 'Your makhana is in the convection oven now' },
   { id: 'packed', label: 'PACKED & SEALED', sub: 'Boxed with made-on-date stamp' },
   { id: 'out', label: 'OUT FOR DELIVERY', sub: 'Route-optimised batch on its way' },
   { id: 'arriving', label: 'ARRIVING SOON', sub: 'Almost at your door' },
-  { id: 'delivered', label: 'DELIVERED', sub: 'Crunch away. Points added to your account.' },
+  { id: 'delivered', label: 'DELIVERED', sub: 'Enjoy. Points added to your account.' },
 ];
 
 /* ---------------- pairings ---------------- */
@@ -178,12 +178,12 @@ export interface Offer {
 }
 
 export const offers: Offer[] = [
-  { id: 'first', title: 'FIRST CRUNCH', sub: 'Welcome to Sahi Crunch. Your first box is special.', code: 'SAHIFIRST', value: '10% OFF' },
-  { id: 'refer', title: 'REFER A FRIEND', sub: 'Both of you earn 200 crunch points', code: 'SAHIREF', value: '₹50 OFF' },
-  { id: 'bulk', title: 'BULK ORDER', sub: 'Orders above ₹999', code: 'BULKCRUNCH', value: '15% OFF' },
-  { id: 'weekly', title: 'WEEKLY SUBSCRIBER', sub: 'Subscribe weekly, never run out', code: 'SAHIWEEK', value: 'FREE DELIVERY' },
-  { id: 'diwali', title: 'FESTIVE GIFTING', sub: 'Royal boxes for every table', code: 'SAHI25', value: '₹250 OFF', locations: ['bhopal-main'] },
-  { id: 'member', title: 'CRUNCH INSIDER', sub: 'Silver tier and above', code: 'INSIDER', value: '20% OFF', locations: ['bhopal-main'] },
+  { id: 'first', title: 'FIRST HUB BOX', sub: 'Welcome to Gharelu Hub. Your first box is special.', code: 'GHFIRST', value: '10% OFF' },
+  { id: 'refer', title: 'REFER A FRIEND', sub: 'Both of you earn 200 hub points', code: 'GHREF', value: '₹50 OFF' },
+  { id: 'bulk', title: 'BULK ORDER', sub: 'Orders above ₹999', code: 'GHBULK15', value: '15% OFF' },
+  { id: 'weekly', title: 'WEEKLY SUBSCRIBER', sub: 'Subscribe weekly, never run out', code: 'GHWEEK', value: 'FREE DELIVERY' },
+  { id: 'diwali', title: 'FESTIVE GIFTING', sub: 'Royal boxes for every table', code: 'GH250', value: '₹250 OFF', locations: ['bhopal-main'] },
+  { id: 'member', title: 'HUB INSIDER', sub: 'Silver tier and above', code: 'INSIDER', value: '20% OFF', locations: ['bhopal-main'] },
 ];
 
 export const offersFor = (locationId: string | null) =>
@@ -193,16 +193,16 @@ export const offersFor = (locationId: string | null) =>
 
 export const TIERS = [
   { id: 'welcome', name: 'WELCOME', from: 0, perks: ['Earn 1 point per ₹10', 'Birthday treat', 'Early access to new flavours'] },
-  { id: 'insider', name: 'INSIDER', from: 500, perks: ['5% crunch cashback', 'Skip-the-wait delivery', 'Insider-only flavours'] },
-  { id: 'sahi', name: 'SAHI', from: 2000, perks: ['10% cashback', 'Free personalisation on every gift', 'Quarterly tasting kit'] },
+  { id: 'insider', name: 'INSIDER', from: 500, perks: ['5% hub cashback', 'Skip-the-wait delivery', 'Insider-only flavours'] },
+  { id: 'gharelu', name: 'GHARELU', from: 2000, perks: ['10% cashback', 'Free personalisation on every gift', 'Quarterly tasting kit'] },
   { id: 'founder', name: 'FOUNDER', from: 5000, perks: ['15% cashback', 'Name in every batch QR', 'Annual Bhopal kitchen visit'] },
 ];
 
 export const rewards = [
   { id: 'r1', name: 'Free Salted Makhana', cost: 200 },
-  { id: 'r2', name: 'Sahi Nankhatai Box', cost: 400 },
+  { id: 'r2', name: 'Gharelu Nankhatai Box', cost: 400 },
   { id: 'r3', name: '₹200 Off Any Order', cost: 600 },
-  { id: 'r4', name: 'Sahi Gift Box — Small', cost: 1000 },
+  { id: 'r4', name: 'Gharelu Gift Box — Small', cost: 1000 },
   { id: 'r5', name: 'Quarterly Kitchen Visit, Bhopal', cost: 4000 },
 ];
 
@@ -213,7 +213,7 @@ export const chefStory = {
   role: 'FOUNDERS · BHOPAL',
   image: 'chef-04',
   story:
-    'Born out of a home kitchen and a conviction: Bhopal\'s 78-year namkeen heritage deserves a modern-health reboot. Sahi Crunch is built on small batches, direct sourcing, and the discipline to never trade freshness for scale.',
+    'Born out of a home kitchen and a conviction: Bhopal\'s 78-year namkeen heritage deserves a modern-health reboot. Gharelu Hub is built on small batches, direct sourcing, and the discipline to never trade freshness for scale.',
   specialty: 'Preservative-free snack innovation',
   favorite: 'Bhopali Masala Makhana — always',
 };
@@ -226,8 +226,8 @@ export const foodStories = [
 
 export const events = [
   { id: 'e1', title: 'POP-UP — BOAT CLUB', date: 'Every Saturday', time: '17:00–21:00', location: 'Bhopal Boat Club', seats: 200, price: 0, image: 'chef-05', desc: 'Free sampling. Meet the founders. Try all five Makhana flavours live.' },
-  { id: 'e2', title: 'DIWALI GIFTING DRIVE', date: 'October 2024', time: 'Pre-order open', location: 'WhatsApp', seats: 500, price: 0, image: 'int-09', desc: 'Corporate and personal Sahi boxes. Pre-order on WhatsApp for guaranteed festive delivery.' },
-  { id: 'e3', title: 'WEEKLY CRUNCH CLUB CALL', date: 'Every Sunday', time: '11:00 AM', location: 'WhatsApp Community', seats: 1000, price: 0, image: 'int-10', desc: 'Exclusive community for subscribers. New flavour previews, early drops, member-only offers.' },
+  { id: 'e2', title: 'DIWALI GIFTING DRIVE', date: 'October 2024', time: 'Pre-order open', location: 'WhatsApp', seats: 500, price: 0, image: 'int-09', desc: 'Corporate and personal Gharelu boxes. Pre-order on WhatsApp for guaranteed festive delivery.' },
+  { id: 'e3', title: 'WEEKLY HUB CLUB CALL', date: 'Every Sunday', time: '11:00 AM', location: 'WhatsApp Community', seats: 1000, price: 0, image: 'int-10', desc: 'Exclusive community for subscribers. New flavour previews, early drops, member-only offers.' },
 ];
 
 export const timeSlots = [

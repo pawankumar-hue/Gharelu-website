@@ -37,7 +37,7 @@ export const categories: MenuCategory[] = [
   { id: 'namkeen', name: 'HERITAGE NAMKEEN', eyebrow: 'Chapter 03', line: '78 Years of Central Indian Spices & Roasted Chana', archetype: 'plate', tint: '#c9a24b' },
   { id: 'cookies', name: 'HEALTHY COOKIES', eyebrow: 'Chapter 04', line: 'Jowar, Whole-wheat, Dry Fruit & Nuts · No Maida', archetype: 'dessert', tint: '#c4855a' },
   { id: 'beverages', name: 'COOLERS & BEVERAGES', eyebrow: 'Chapter 05', line: 'Gulab Shikanji, Kesar Elaichi & Jamun Masala', archetype: 'glass', tint: '#e23744' },
-  { id: 'gifting', name: 'GIFT BOXES', eyebrow: 'Chapter 06', line: 'Sahi Bhopal Kraft Boxes & Hampers', archetype: 'plate', tint: '#8b1a1a', smoke: true },
+  { id: 'gifting', name: 'GIFT BOXES', eyebrow: 'Chapter 06', line: 'Gharelu Bhopal Kraft Boxes & Hampers', archetype: 'plate', tint: '#8b1a1a', smoke: true },
   { id: 'subscriptions', name: 'SUBSCRIPTIONS', eyebrow: 'Chapter 07', line: 'Weekly & Monthly Recurring Snack Boxes', archetype: 'round', tint: '#c9a24b' },
 ];
 
@@ -128,7 +128,7 @@ export const dishes: Dish[] = [
 
   d(
     'mk-family-assorted',
-    'Sahi Crunch Makhana Quad-Pack',
+    'Gharelu Hub Makhana Quad-Pack',
     'makhana',
     399,
     'lux-05',
@@ -323,7 +323,7 @@ export const dishes: Dish[] = [
     'gifting',
     899,
     'slide2-card-1',
-    'Full Sahi Crunch pitch deck portfolio: 2 Makhana pouches, 2 Nankhatai boxes, Laung Sev, and Jowar Peanut cookies with custom made-on-date greeting card.',
+    'Full Gharelu Hub pitch deck portfolio: 2 Makhana pouches, 2 Nankhatai boxes, Laung Sev, and Jowar Peanut cookies with custom made-on-date greeting card.',
     ['2 × Makhana Packs', '2 × Nankhatai Boxes', 'Laung Sev', 'Jowar Cookies', 'Luxury Gift Box'],
     { spiceLevel: 1, bestseller: true, weight: '650g Luxury Box', pptHero: true }
   ),
@@ -335,7 +335,7 @@ export const dishes: Dish[] = [
     4499,
     'slide2-card-2',
     'Curated for corporate Diwali, investor events, and VIP clients. Premium laser-cut boxes with custom corporate branding and WhatsApp direct tracking.',
-    ['10 × Curated Sahi Crunch Gift Boxes', 'Custom Brand Cards', 'Direct Batch Dispatch'],
+    ['10 × Curated Gharelu Hub Gift Boxes', 'Custom Brand Cards', 'Direct Batch Dispatch'],
     { spiceLevel: 1, weight: '10 × 300g Hampers' }
   ),
 
@@ -355,7 +355,7 @@ export const dishes: Dish[] = [
 
   d(
     'sb-monthly-club',
-    'Monthly 1,000-Homes Crunch Club',
+    'Monthly 1,000-Homes Hub Club',
     'subscriptions',
     1199,
     'slide2-card-4',
