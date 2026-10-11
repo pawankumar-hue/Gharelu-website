@@ -2,6 +2,11 @@ import type { Dish, Order, Reservation, User, DashboardMetrics, MenuCategory } f
 
 const TOKEN_KEY = 'gharelu_hub_admin_token';
 const ADMIN_USER_KEY = 'gharelu_hub_admin_user';
+// VITE_ADMIN_API_URL points at the admin API. Empty = same origin (local dev
+// goes through the Vite proxy). Production (e.g. Render static hosting) sets
+// this to the live admin backend URL; auth uses Bearer tokens so plain CORS
+// is sufficient.
+const API_BASE = import.meta.env.VITE_ADMIN_API_URL || '';
 
 export const ORDER_STAGES = [
   { label: 'Order Received', desc: 'Sent to master kitchen', color: 'text-[#681121] border-[#681121]/45' },
@@ -37,7 +42,7 @@ async function req<T>(path: string, options: RequestInit = {}): Promise<T> {
     headers.set('Content-Type', 'application/json');
   }
 
-  const res = await fetch(path, { ...options, headers });
+  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
   if (res.status === 401) {
     authStorage.clearToken();
     window.location.reload();

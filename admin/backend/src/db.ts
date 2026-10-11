@@ -13,7 +13,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Root of project is three levels up from admin/backend/src
 const PROJECT_ROOT = path.resolve(__dirname, '..', '..', '..');
-const DB_PATH = path.join(PROJECT_ROOT, 'backend', 'data', 'gharelu-hub-db.json');
+// DATA_DIR lets hosted environments (e.g. Render persistent disk) relocate the JSON DB.
+// Defaults to the local backend/data/ folder for development.
+const DATA_DIR = process.env.DATA_DIR || path.join(PROJECT_ROOT, 'backend', 'data');
+const DB_PATH = path.join(DATA_DIR, 'gharelu-hub-db.json');
 
 /* ─────────────── Types ─────────────── */
 

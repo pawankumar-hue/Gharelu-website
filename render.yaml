@@ -1,0 +1,88 @@
+# Gharelu Hub — Render Blueprint
+# Deploy everything in one click: Render Dashboard → New → Blueprint → pick this repo.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# NOTE on data: both APIs share one JSON database file locally. On Render each
+# backend gets its own persistent disk (disks can't be shared between services),
+# so each starts from the same seed catalog and persists independently. If the
+# admin panel must edit the LIVE store catalog, migrate to Render Postgres
+# (free tier available) as a follow-up.
+
+services:
+  # ── Customer store API (Express + JSON DB) ──────────────────────────────
+  - type: web
+    name: gharelu-store-api
+    runtime: node
+    plan: starter # disks require a paid instance; downgrade to free + remove disk for ephemeral demo
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    disk:
+      name: gharelu-store-data
+      mountPath: /var/gharelu-store-data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/gharelu-store-data
+      - key: JWT_SECRET
+        generateValue: true
+
+  # ── Customer store web app (Next.js) ────────────────────────────────────
+  - type: web
+    name: gharelu-store-web
+    runtime: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BACKEND_API_URL # Next.js rewrites proxy same-origin /api/* here (cookies stay first-party)
+        fromService:
+          type: web
+          name: gharelu-store-api
+          envVarKey: RENDER_EXTERNAL_URL
+
+  # ── Admin API (Express + JSON DB, Bearer auth) ──────────────────────────
+  - type: web
+    name: gharelu-admin-api
+    runtime: node
+    plan: starter # disks require a paid instance; downgrade to free + remove disk for ephemeral demo
+    rootDir: admin/backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/admin/health
+    disk:
+      name: gharelu-admin-data
+      mountPath: /var/gharelu-admin-data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/gharelu-admin-data
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@ghareluhub.in
+      - key: ADMIN_PASSWORD # change after first login deploy; default keeps local parity
+        value: admin123
+
+  # ── Admin panel (Vite static site) ──────────────────────────────────────
+  - type: web
+    runtime: static
+    name: gharelu-admin-web
+    rootDir: admin/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_ADMIN_API_URL # baked at build time; admin API allows CORS, Bearer auth
+        fromService:
+          type: web
+          name: gharelu-admin-api
+          envVarKey: RENDER_EXTERNAL_URL
